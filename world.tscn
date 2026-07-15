@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://chkepq73hacwd"]
 
-[ext_resource type="Script" uid="uid://dqyrsotjv3h1n" path="res://player.gd" id="1_f3sb7"]
 [ext_resource type="Texture2D" uid="uid://baoeewoo44cs5" path="res://Tileset/Tilemap_color5.png" id="1_fj7yv"]
+[ext_resource type="PackedScene" uid="uid://di1mrrr46igo6" path="res://player.tscn" id="2_fj7yv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fj7yv"]
 texture = ExtResource("1_fj7yv")
@@ -55,22 +55,13 @@ texture_region_size = Vector2i(64, 64)
 tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_fj7yv")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uybdb"]
-size = Vector2(20, 30)
-
 [node name="World" type="Node2D" unique_id=558758796]
 
 [node name="tilemap" type="TileMapLayer" parent="." unique_id=46975756]
 tile_map_data = PackedByteArray("AAD7////AAABAAEAAAD8////AAABAAEAAAD9////AAABAAEAAAD+////AAABAAEAAAD/////AAABAAEAAAAAAP//AAABAAEAAAABAP//AAABAAEAAAACAP//AAABAAEAAAADAP//AAABAAEAAAAEAAAAAAABAAEAAAAEAAEAAAABAAIAAAADAAEAAAABAAIAAAACAAEAAAABAAIAAAABAAEAAAABAAIAAAAAAAEAAAABAAIAAAD//wEAAAABAAIAAAD+/wEAAAABAAIAAAD9/wEAAAABAAIAAAD8/wEAAAABAAIAAAD7/wEAAAABAAIAAAD6/wEAAAABAAIAAAD5/wEAAAABAAIAAAD4/wEAAAAAAAIAAAD4/wAAAAAAAAEAAAD5/wAAAAABAAEAAAD6/wAAAAABAAEAAAD7/wAAAAABAAEAAAD8/wAAAAABAAEAAAD9/wAAAAABAAEAAAD+/wAAAAABAAEAAAD//wAAAAABAAEAAAAAAAAAAAABAAEAAAABAAAAAAABAAEAAAACAAAAAAABAAEAAAADAAAAAAABAAEAAAAFAAAAAAABAAEAAAAGAAAAAAACAAEAAAAGAP//AAACAAEAAAAFAP//AAABAAEAAAAFAP7/AAABAAEAAAAEAP7/AAABAAEAAAADAP7/AAABAAEAAAACAP7/AAABAAEAAAABAP7/AAABAAEAAAAAAP3/AAABAAAAAAD///3/AAABAAAAAAD+//3/AAABAAAAAAD9//3/AAABAAAAAAD8//3/AAABAAAAAAD7//3/AAABAAAAAAD6//3/AAABAAAAAAD5//3/AAABAAAAAAD5//7/AAABAAEAAAD5////AAABAAEAAAD6////AAABAAEAAAD9//7/AAABAAEAAAD+//7/AAABAAEAAAD8//7/AAABAAEAAAD7//7/AAABAAEAAAD6//7/AAABAAEAAAD///7/AAABAAEAAAAAAP7/AAABAAEAAAAEAP//AAABAAEAAAAEAP3/AAABAAAAAAADAP3/AAABAAAAAAACAP3/AAABAAAAAAABAP3/AAABAAAAAAAFAP3/AAABAAAAAAAGAP7/AAACAAEAAAAGAAEAAAACAAIAAAAFAAEAAAABAAIAAAD4////AAAAAAEAAAD4//7/AAAAAAEAAAD4//3/AAAAAAAAAAAGAP3/AAACAAAAAAA=")
 tile_set = SubResource("TileSet_aqk2v")
 
-[node name="player" type="CharacterBody2D" parent="." unique_id=881417265]
-script = ExtResource("1_f3sb7")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player" unique_id=1619038626]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=75872768]
-shape = SubResource("RectangleShape2D_uybdb")
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=581984429]
 position = Vector2(-1, -2)
+
+[node name="Player" parent="." unique_id=307321833 instance=ExtResource("2_fj7yv")]
